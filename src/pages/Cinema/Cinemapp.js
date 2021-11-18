@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { getMovieList } from '../../services';
+import { MovieList } from '../../containers';
 
 
 
@@ -46,7 +47,7 @@ export const Cinemapp = () => {
 
                 <br />
                 
-                
+                <MovieList movies={movieList} />
 
 
             </main>
