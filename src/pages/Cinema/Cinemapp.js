@@ -6,12 +6,22 @@ import { MovieList } from '../../containers';
 
 
 export const Cinemapp = () => {
+    let [ input, setInput ] = useState('');
     let [ movie, setMovie ] = useState('');
     let [ movieList, setMovieList ] = useState([]);
 
 
     const handleChange = (e) => {
-       setMovie(e.target.value);
+       setInput(e.target.value);
+
+       console.log('input = ', input);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setMovie(input);
+
+        return null;
     };
 
 
@@ -21,6 +31,8 @@ export const Cinemapp = () => {
             .then(items => {
                 if (mounted) {
                     setMovieList(items);
+
+                    console.log(movie);
                 }
             });
 
@@ -41,10 +53,10 @@ export const Cinemapp = () => {
                     name="input" 
                     id="input" 
                     placeholder="O que você busca..."
-                    
                     onChange={handleChange} 
+                    required
                  />
-
+                <button type="submit" onClick={handleSubmit} >Buscar</button>
                 <br />
                 
                 <MovieList movies={movieList} />
