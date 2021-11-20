@@ -1,25 +1,23 @@
+import React from 'react';
+
+import { MovieItem } from '../components';
+
 
 export const MovieList = (props) => {
-    const test = <li>teste</li>;
-
-    if (props) {
-        console.log(props);
-        console.log(typeof props);
-        
-        if (props.movies.search) {
-            props.movies.search.map((item) => {
-                console.log(item);
-            });
-        }
-    } else {
-        test = <li>teste</li>
-    }
+    console.log(props);
+    console.log(props.movieList.Search);
+    const { imdbID } = props.movieList.Search;
+    
+    const renderMovie = props.movieList.Search.map((movie) => {
+        return <MovieItem key={imdbID} {...movie} />;
+    });
 
 
     return (
-        <ul>
-            {test}
-        </ul>
+        <u>
+            {renderMovie}
+        </u>
     );
-} ;
+};
+
 

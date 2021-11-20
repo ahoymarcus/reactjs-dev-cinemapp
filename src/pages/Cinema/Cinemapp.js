@@ -1,71 +1,95 @@
+// https://github.com/fleye-me/dev-cinemapp
+// https://www.figma.com/proto/UE8zfSxxf8K0TzpgslbYhz/CinemAPP?node-id=1%3A32&scaling=contain
 import React, { useState, useEffect } from 'react';
 
-import { getMovieList } from '../../services';
+import { Loading } from '../../components';
 import { MovieList } from '../../containers';
 
 
+const url = `http://www.omdbapi.com/?apikey=925eba28&s=`;
+
 
 export const Cinemapp = () => {
-    let [ input, setInput ] = useState('');
-    let [ movie, setMovie ] = useState('');
-    let [ movieList, setMovieList ] = useState([]);
+    const [ isLoading, setIsLoading ] = useState(true);
+    const [ input, setInput ] = useState('');
+    const [ movie, setMovie ] = useState('batman');
+    const [ movieList, setMovieList ] = useState([]);
 
+
+    const renderComponents = () => {
+
+        if (isLoading) {
+            return <Loading />;
+        } else {
+            return <MovieList movieList={movieList} />;
+        }
+    };
 
     const handleChange = (e) => {
-       setInput(e.target.value);
-
-       console.log('input = ', input);
+        console.log(e.target.value);
+        
+        setInput(e.target.value.toLowerCase());
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault();
         setMovie(input);
-
-        return null;
+        
+        console.log(movie);
+        console.log(`${url}${movie}`);
     };
 
 
-    useEffect(() => {
-        let mounted = true;
-        getMovieList(movie)
-            .then(items => {
-                if (mounted) {
-                    setMovieList(items);
+    const fetchMovieList = async(mov) => {
+        setIsLoading(true);
 
-                    console.log(movie);
-                }
-            });
+        try {
+            const response = await fetch(`${url}${mov}`);
+            const tempMovieList = await response.json();
 
-        return () => mounted = false;
-    }, movie);
+            console.log(tempMovieList);
+            setMovieList(tempMovieList);
+            setIsLoading(false);
+        } catch (err) {
+            setIsLoading(false);
+            console.log(err);
+        }
+    };
+
+
+    useEffect((movie) => {
+        fetchMovieList(movie);
+    }, [movie]);
+
 
 
     return (
-        <>
+        <main className="main-cinema">
             <header className="header-cinema">
                 <h1>Cinema App</h1>
                 <p>Bem-vindo ao mundo espetacular do cinema</p>
             </header>
 
-            <main className="main-cinema">
+            <section>
                 <input 
                     type="text" 
                     name="input" 
                     id="input" 
                     placeholder="O que você busca..."
-                    onChange={handleChange} 
+                    onChange={handleChange}
                     required
                  />
+
                 <button type="submit" onClick={handleSubmit} >Buscar</button>
-                <br />
-                
-                <MovieList movies={movieList} />
 
+                <hr />
 
-            </main>
-        </>
+                {renderComponents()}
+
+            </section>
+        </main>
     );
 };
+
 
 
 

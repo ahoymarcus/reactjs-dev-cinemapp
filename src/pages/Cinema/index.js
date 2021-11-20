@@ -1,1 +1,1 @@
-export * from './Cinemapp';
+export * from './Cinemapp';  
