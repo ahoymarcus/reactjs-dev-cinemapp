@@ -3,6 +3,35 @@ body {
   padding: 0;
 }
 
+.header-cinema {
+  background-color: #1c2029;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.list-cinema {
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
+
+.footer-cinema {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+
+.footer-cinema button {
+  display: block;
+  font-size: 16px;
+  background-color: rgb(176, 176, 204);
+  padding: 6px;
+  width: 50%;
+}
+
 .single-movie {
   color: black;
   background-color: white;

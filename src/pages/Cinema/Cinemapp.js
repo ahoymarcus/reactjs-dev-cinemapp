@@ -68,9 +68,7 @@ export const Cinemapp = () => {
             <header className="header-cinema">
                 <h1>Cinema App</h1>
                 <p>Bem-vindo ao mundo espetacular do cinema</p>
-            </header>
 
-            <section>
                 <input 
                     type="text" 
                     name="input" 
@@ -83,9 +81,16 @@ export const Cinemapp = () => {
                 <button type="submit" onClick={handleSubmit} >Buscar</button>
 
                 <hr />
+            </header>
 
+            <section className="list-cinema">
                 {renderComponents()}
 
+            </section>
+
+            <section className="footer-cinema">
+                <button>Buscar</button>
+                <button>Favoritos</button>
             </section>
         </main>
     );
