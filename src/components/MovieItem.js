@@ -3,11 +3,16 @@ import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
 
 
 
-export const MovieItem = ({ imdbID, Title, Type, Year, Poster }) => {
+export const MovieItem = ({ imdbID, Title, Type, Year, Poster, favorite, handleFavoriteMovie }) => {
 
-    // const renderStarIcon = () => {
-
-    // };
+    const renderStarIcon = () => {
+        
+        if (!favorite) {
+            return <AiOutlineStar onClick={handleFavoriteMovie} />;
+        } else {
+            return <AiFillStar className="AiFillStar" onClick={handleFavoriteMovie} />
+        }
+    };
 
 
 
@@ -25,8 +30,8 @@ export const MovieItem = ({ imdbID, Title, Type, Year, Poster }) => {
                 </div>
             </div>
            
-           <div>
-               <AiOutlineStar />
+           <div className="star-container">
+               {renderStarIcon()}
            </div>
         </div>
     );

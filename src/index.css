@@ -19,7 +19,8 @@ body {
 }
 
 .single-movie-text {
-  margin-left: 20px;
+  margin-left: 5px;
+  max-width: 310px;
 }
 
 .movie-title,
@@ -34,4 +35,13 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 50%;
+}
+
+.star-container {
+  width: 20px;
+  height: 20px;
+}
+
+.AiFillStar {
+  color: blue;
 }
