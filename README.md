@@ -1,68 +1,27 @@
 # Dev Cinema App - Fleye-me
 
-Projeto de fullstack de qualificação para Fleye-me. [^1]
-
-
-<br />
-
+Projeto de fullstack de qualificação para a empresa Fleye-me. [^1]
+Trata-se de uma aplicação React-JS com funcionalidade para fazer requisição GET numa API de filmes e retornar uma lista para ser renderizada ao usuário.
 
 <br />
 
+O usuário pelo realizar uma pesquisas por texto e ter renderizado as suas escolhas.
+
+<br />
+
+Podendo ainda selecionar e descelecionar filmes com um click, mas a funcionalidade para a criação de uma lista/página separada para os filmes favoritos ainda não está finalizada!
+
+<br />
 
 [Fleye-me](https://sthima.com.br/)
 
-
-
 <br />
 
+### Imagem da tela principal do Cinema App:
 
-### A:
-
-![Imagem o objetivo final do projeto](/public/images/)
-
+![Imagem o objetivo final do projeto](/public/images/funcionalidade-principal.png)
 
 <br />
-
-
-### C:
-
-![Imagem do sucesso na criação de um usuário e do token JWT no sistema](/public/images/)
-
-
-<br />
-
-
-### A:
-
-![Imagem da construção de uma requisição para rota restrita com um jwt](/public/images/)
-
-
-<br />
-
-
-### A:
-
-![Imagem da a resposta do servidor a uma tentativa de acesso a uma rota restrita sem o token JWT necessário](/public/images/)
-
-
-<br />
-
-
-### J:
-
-![Imagem da resposta do servidor com o acesso à rota restrita quando da correta validação do token JWT](/public/images/)
-
-
-<br />
-
-
-### F:
-
-![Imagem do teste da aplicação usando a aplicação de Frontend em Vanilla JS providenciado pelo professor Smilga](/public/images/)
-
-
-<br />
-
 
 <br />
 <br />
