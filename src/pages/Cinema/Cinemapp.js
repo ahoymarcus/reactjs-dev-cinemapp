@@ -14,10 +14,10 @@ export const Cinemapp = () => {
     const [ input, setInput ] = useState('');
     const [ movie, setMovie ] = useState('batman');
     const [ movieList, setMovieList ] = useState([]);
-
-
-
-    const renderComponents = () => {
+  
+    
+ 
+    const renderListComponent = () => {
 
         if (isLoading) {
             return <Loading />;
@@ -25,6 +25,7 @@ export const Cinemapp = () => {
             return <MovieList movieList={movieList} />;
         }
     };
+
 
     const handleChange = (e) => {
         console.log(e.target.value);
@@ -66,7 +67,7 @@ export const Cinemapp = () => {
     return (
         <main className="main-cinema">
             <header className="header-cinema">
-                <h1>Cinema App</h1>
+                <h1>Cinema App </h1>
                 <p>Bem-vindo ao mundo espetacular do cinema</p>
 
                 <input 
@@ -84,7 +85,7 @@ export const Cinemapp = () => {
             </header>
 
             <section className="list-cinema">
-                {renderComponents()}
+                {renderListComponent()}
 
             </section>
 

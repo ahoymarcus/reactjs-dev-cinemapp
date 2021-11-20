@@ -22,3 +22,86 @@
   align-items: center;
   justify-content: center;
 }
+
+.header-cinema {
+  background-color: #1c2029;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.list-cinema {
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
+
+@media only screen and (min-width: 450px) {
+  .list-cinema {
+    margin-top: 220px;
+  }
+}
+@media only screen and (min-width: 550px) {
+  .list-cinema {
+    margin-top: 230px;
+  }
+}
+
+.footer-cinema {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+
+.footer-cinema button {
+  display: block;
+  font-size: 16px;
+  background-color: rgb(176, 176, 204);
+  padding: 6px;
+  width: 50%;
+}
+
+.single-movie {
+  color: black;
+  background-color: white;
+  margin: 10px 0;
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-movie-header {
+  display: flex;
+  /*justify-content: space-between;*/
+}
+
+.single-movie-text {
+  margin-left: 5px;
+  max-width: 310px;
+}
+
+.movie-title,
+.movie-year {
+  margin: 0;
+}
+
+.movie-icon {
+  display: block;
+  color: blue;
+  background-image: url("./assets/blue.png");
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.star-container {
+  width: 20px;
+  height: 20px;
+}
+
+.AiFillStar {
+  color: blue;
+}
