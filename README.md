@@ -19,7 +19,7 @@ Podendo ainda selecionar e descelecionar filmes com um click, mas a funcionalida
 
 ### Imagem da tela principal do Cinema App:
 
-![Imagem o objetivo final do projeto](/public/images/funcionalidade-principal.png)
+![Imagem o objetivo final do projeto](/public/images/funcionalidades-principais.png)
 
 <br />
 
