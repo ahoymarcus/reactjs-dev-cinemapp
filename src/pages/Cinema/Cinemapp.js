@@ -14,6 +14,8 @@ export const Cinemapp = () => {
     const [ input, setInput ] = useState('');
     const [ movie, setMovie ] = useState('batman');
     const [ movieList, setMovieList ] = useState([]);
+    const [ favoriteMovies, setFavoriteMovies ] = useState([]);
+    
 
 
     const renderComponents = () => {
