@@ -2,3 +2,25 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.single-movie {
+  color: black;
+  background-color: white;
+  margin: 10px 0;
+  padding: 10px;
+
+  display: flex;
+}
+
+.movie-title,
+.movie-year {
+  margin: 0;
+}
+
+.movie-icon {
+  display: block;
+  color: blue;
+  background-image: url("./assets/blue.png");
+  border-radius: 50%;
+  width: 20px;
+}
